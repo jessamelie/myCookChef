@@ -1,0 +1,43 @@
+export const data = [
+    {
+        
+        id:0,
+        title:"Pancakes",
+        image:"assets/images/pancake.jpg"
+    },
+    {
+        id:1,
+        title:"Pancakes",
+        image:"assets/images/pancake.jpg"
+    },
+    {
+        id:2,
+        title:"Pancakes",
+        image:"assets/images/pancake.jpg"
+    },
+    {
+        id:3,
+        title:"Pancakes",
+        image:"assets/images/pancake.jpg"
+    },
+    {
+        id:4,
+        title:"Pancakes",
+        image:"assets/images/pancake.jpg"
+    },
+    {
+        id:5,
+        title:"Pancakes",
+        image:"assets/images/pancake.jpg"
+    },
+    {
+        id:6,
+        title:"Pancakes",
+        image:"assets/images/pancake.jpg"
+    },
+    {
+        id:7,
+        title:"Pancakes",
+        image:"assets/images/pancake.jpg"
+    }
+]
