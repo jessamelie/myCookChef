@@ -11,7 +11,7 @@ export const Content = () => {
       <div className={`card p-20 ${styles.contentCard}`}>
         <div className={styles.grid}>
           {recipes.map((r) => (
-            <Recipe key={r.id} title={r.title} image={r.image} />
+            <Recipe key={r._id} title={r.title} image={r.image} />
           ))}
         </div>
       </div>
