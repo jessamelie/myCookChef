@@ -2,6 +2,8 @@
 
 
 .header{
+    position: relative;
+    height: 58px;
     padding: 10px 20px;
     background-color: white;
     box-shadow: var(--box-shadow-nav);
@@ -21,7 +23,7 @@
 .headerXs{
     display: none;
     cursor: pointer;
-    transition: opcity 0.2s;
+    transition: opacity 0.2s;
     &:hover {
         opacity: 0.8;
     }

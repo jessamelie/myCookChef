@@ -1,7 +1,10 @@
 import styles from "./Header.module.scss";
 import logo from "../assets/images/logomycookchef.png"; 
+import { useState } from "react";
+import { HeaderXsMenu } from "./HeaderXsMenu";
 
 export const Header = () => {
+  const [showMenu, setShowMenu] = useState(false)
   return (
     <header className={`${styles.header} d-flex flex-row align-items-center`}>
       <div className="flex-fill">
@@ -14,7 +17,13 @@ export const Header = () => {
         </button>
         <button className="btn btn-primary">connexion</button>
       </ul>
-      <i className={`fa-solid fa-bars ${styles.headerXs}`}></i>
+      <i onClick={()=> setShowMenu(true)} className={`fa-solid fa-bars ${styles.headerXs}`}></i>
+      { showMenu && 
+      <>
+      <div onClick={() => setShowMenu(false)} className="calc"> </div>
+      <HeaderXsMenu/>
+      </>
+      }
     </header>
   );
 };
