@@ -1,9 +1,15 @@
 import styles from "./Content.module.scss";
 import { Recipe } from "./Recipe";
 import { data } from "../data/recipes";
+import { useState } from "react";
 
 export const Content = () => {
   const recipes = data;
+  const [recipesFilter, setRecipesFilter] = useState("");
+  const handleInput = (e) => {
+    const recipesFilter = e.target.value;
+    setRecipesFilter(recipesFilter.trim().toLowerCase());
+  }
 
   return (
     <div className="flex-fill container p-20">
@@ -11,10 +17,12 @@ export const Content = () => {
       <div className={`card d-flex flex-column p-20 ${styles.contentCard}`}>
         <div className={`d-flex flex-row justify-content-center align-item-center my-30 ${styles.searchBar}`}>
         <i className="fa-solid fa-magnifying-glass mr-15"></i>
-          <input className="flex-fill" type="text" placeholder="Rechercher" />
+          <input onInput={handleInput} className="flex-fill" type="text" placeholder="Rechercher" />
         </div>
         <div className={styles.grid}>
-          {recipes.map((r) => (
+          {recipes
+          .filter((r) => r.title.toLocaleLowerCase().startsWith(recipesFilter))
+          .map((r) => (
             <Recipe key={r._id} title={r.title} image={r.image} />
           ))}
         </div>
